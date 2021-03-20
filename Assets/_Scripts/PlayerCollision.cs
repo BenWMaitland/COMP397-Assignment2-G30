@@ -208,8 +208,8 @@ public class PlayerCollision : MonoBehaviour
         audio.Play();
         Invoke("Restart", restartDelay);
         Time.timeScale = 0f;
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
+        //Cursor.lockState = CursorLockMode.None;
+        //Cursor.visible = true;
         gameOverScreen.SetActive(true);
     }
 
@@ -219,8 +219,8 @@ public class PlayerCollision : MonoBehaviour
         audio.Play();
         Invoke("Restart", restartDelay);
         Time.timeScale = 0f;
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
+        //Cursor.lockState = CursorLockMode.None;
+        //Cursor.visible = true;
         victoryScreen.SetActive(true);
     }
 

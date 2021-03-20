@@ -17,8 +17,8 @@ public class InventorySystem : MonoBehaviour
     {
         inventory = !inventory;
         inventorySys.SetActive(inventory);
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        //Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.visible = false;
     }
 
     // Update is called once per frame
@@ -34,17 +34,17 @@ public class InventorySystem : MonoBehaviour
     {
         inventory = !inventory;
         inventorySys.SetActive(inventory);
-        if (inventory)
-        {
-            playerCamera.enabled = false;
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
-        }
-        else
-        {
-            playerCamera.enabled = true;
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
-        }
+        //if (inventory)
+        //{
+        //    playerCamera.enabled = false;
+        //    Cursor.lockState = CursorLockMode.None;
+        //    Cursor.visible = true;
+        //}
+        //else
+        //{
+        //    playerCamera.enabled = true;
+        //    Cursor.lockState = CursorLockMode.Locked;
+        //    Cursor.visible = false;
+        //}
     }
 }
