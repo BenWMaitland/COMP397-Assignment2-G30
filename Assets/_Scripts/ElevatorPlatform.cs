@@ -8,7 +8,7 @@ public class ElevatorPlatform : MonoBehaviour
 {
     public float topLimit = 1f;
     public float bottomLimit = -3f;
-    public float speed = 2f;
+    public float speed = 5.0f;
     private int direction = 1;
     Vector3 movement;
 
