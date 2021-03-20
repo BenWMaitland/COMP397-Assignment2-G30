@@ -8,6 +8,11 @@ using UnityEngine.Audio;
 
 public class PlayerBehaviour : MonoBehaviour
 {
+    [Header("Controls")]
+    public Joystick joystick;
+    public float horizontalSensitivity;
+    public float verticalSensitivity;
+
     [Header("Movement Input Options")]
     public MovementOptionSO curreMovementOptions;
     public KeyCode upKey;
@@ -28,6 +33,9 @@ public class PlayerBehaviour : MonoBehaviour
     public float groundRadius = 0.5f;
     public LayerMask groundMask;
     public bool isGrounded;
+
+    [Header("MiniMap")]
+    public GameObject miniMap;
 
     [Header("Animations")]
     public Animator anim;
@@ -58,8 +66,9 @@ public class PlayerBehaviour : MonoBehaviour
         {
             velocity.y = -2.0f;
         }
-        float x = Input.GetAxis("Horizontal");
-        float z = Input.GetAxis("Vertical");
+
+        float x = joystick.Horizontal;
+        float z = joystick.Vertical;
 
         if (x != 0 || z != 0)
             anim.SetBool("isRunning", true);
@@ -69,21 +78,6 @@ public class PlayerBehaviour : MonoBehaviour
         Vector3 move = transform.right * x * currSpeedMultiplier + transform.forward * z * currSpeedMultiplier;
 
         controller.Move(move * maxSpeed * Time.deltaTime);
-
-        if (Input.GetButton("Jump") && isGrounded)
-        {
-            if (hasSuperJump)
-            {
-                Debug.Log("Super Jumping");
-                velocity.y = Mathf.Sqrt(jumpHeight * superJumpMultiplier * -2.0f * gravity);
-                hasSuperJump = false;
-            }
-            else
-            {
-                Debug.Log("Jumping");
-                velocity.y = Mathf.Sqrt(jumpHeight * -2.0f * gravity);
-            }
-        }
 
         velocity.y += gravity * Time.deltaTime;
 
@@ -103,5 +97,41 @@ public class PlayerBehaviour : MonoBehaviour
     {
         Gizmos.color = Color.white;
         Gizmos.DrawWireSphere(groundCheck.position, groundRadius);
+    }
+
+    void Jump()
+    {
+        if (hasSuperJump)
+        {
+            Debug.Log("Super Jumping");
+            velocity.y = Mathf.Sqrt(jumpHeight * superJumpMultiplier * -2.0f * gravity);
+            hasSuperJump = false;
+            controller.Move(velocity * Time.deltaTime);
+        }
+        else
+        {
+            Debug.Log("Jumping");
+            velocity.y = Mathf.Sqrt(jumpHeight * -2.0f * gravity);
+            controller.Move(velocity * Time.deltaTime);
+        }
+    }
+
+    void ToggleMinimap()
+    {
+        // toggle the MiniMap on/off
+        miniMap.SetActive(!miniMap.activeInHierarchy);
+    }
+
+    public void OnJumpButtonPressed()
+    {
+        if (isGrounded)
+        {
+            Jump();
+        }
+    }
+
+    public void OnMapButtonPressed()
+    {
+        ToggleMinimap();
     }
 }
