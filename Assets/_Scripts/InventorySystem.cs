@@ -24,10 +24,10 @@ public class InventorySystem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.I))
-        {
-            showHideInventory();
-        }
+        //if (Input.GetKeyDown(KeyCode.I))
+        //{
+        //    showHideInventory();
+        //}
     }
 
     public void showHideInventory()
