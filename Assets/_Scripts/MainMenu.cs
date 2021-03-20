@@ -20,5 +20,6 @@ public class MainMenu : MonoBehaviour
     public void LoadGame()
     {
         Debug.Log("Load game");
+        SaveSystem.LoadPlayer();
     }
 }

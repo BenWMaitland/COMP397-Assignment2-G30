@@ -301,6 +301,8 @@ public class PlayerCollision : MonoBehaviour
             if (enemyData.enemyStates[i] == true)
             {
                 enemies.gameObject.transform.GetChild(i).gameObject.GetComponent<SlimeBehaviour>().SetDead();
+                enemies.gameObject.transform.GetChild(i).gameObject.GetComponent<SlimeBehaviour>().gameObject.transform.GetComponent<BoxCollider>().enabled = false;
+                enemies.gameObject.transform.GetChild(i).gameObject.GetComponent<SlimeBehaviour>().gameObject.transform.Find("Body").GetComponent<BoxCollider>().enabled = false;
             }
         }
 
