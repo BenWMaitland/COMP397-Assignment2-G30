@@ -34,6 +34,9 @@ public class PlayerBehaviour : MonoBehaviour
     public LayerMask groundMask;
     public bool isGrounded;
 
+    [Header("MiniMap")]
+    public GameObject miniMap;
+
     [Header("Animations")]
     public Animator anim;
 
@@ -113,11 +116,11 @@ public class PlayerBehaviour : MonoBehaviour
         }
     }
 
-    //void ToggleMinimap()
-    //{
-    //    // toggle the MiniMap on/off
-    //    miniMap.SetActive(!miniMap.activeInHierarchy);
-    //}
+    void ToggleMinimap()
+    {
+        // toggle the MiniMap on/off
+        miniMap.SetActive(!miniMap.activeInHierarchy);
+    }
 
     public void OnJumpButtonPressed()
     {
@@ -127,8 +130,8 @@ public class PlayerBehaviour : MonoBehaviour
         }
     }
 
-    //public void OnMapButtonPressed()
-    //{
-    //    ToggleMinimap();
-    //}
+    public void OnMapButtonPressed()
+    {
+        ToggleMinimap();
+    }
 }

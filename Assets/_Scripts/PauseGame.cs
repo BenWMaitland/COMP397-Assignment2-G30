@@ -11,19 +11,7 @@ public class PauseGame : MonoBehaviour
     // Start is called before the first frame update
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            if (GameIsPaused)
-            {
-                ResumeGame();
-            }
-            else
-            {
-                Cursor.lockState = CursorLockMode.None;
-                Cursor.visible = true;
-                Pause();
-            }
-        }
+        
     }
 
     public void ResumeGame()
@@ -58,5 +46,24 @@ public class PauseGame : MonoBehaviour
     {
         Time.timeScale = 1.0f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void TogglePaused()
+    {
+        if (GameIsPaused)
+        {
+            ResumeGame();
+        }
+        else
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+            Pause();
+        }
+    }
+
+    public void OnPauseButtonPressed()
+    {
+        TogglePaused();
     }
 }
