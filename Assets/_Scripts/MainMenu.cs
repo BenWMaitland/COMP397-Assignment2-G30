@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    public static bool isOnLoad = false;
     // Start is called before the first frame update
     public void PlayGame()
     {
@@ -20,6 +21,7 @@ public class MainMenu : MonoBehaviour
     public void LoadGame()
     {
         Debug.Log("Load game");
-        SaveSystem.LoadPlayer();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        isOnLoad = true;
     }
 }
