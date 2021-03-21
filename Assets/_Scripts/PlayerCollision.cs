@@ -87,7 +87,7 @@ public class PlayerCollision : MonoBehaviour
         Debug.Log("onload from main clicked:" + MainMenu.isOnLoad);
         if (MainMenu.isOnLoad)
         {
-            LoadGameClicked();
+            LoadPlayer();
             MainMenu.isOnLoad = false;
         }
     }

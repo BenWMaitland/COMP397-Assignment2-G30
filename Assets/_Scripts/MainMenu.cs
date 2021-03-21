@@ -9,6 +9,7 @@ public class MainMenu : MonoBehaviour
     // Start is called before the first frame update
     public void PlayGame()
     {
+        isOnLoad = false;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
@@ -21,7 +22,7 @@ public class MainMenu : MonoBehaviour
     public void LoadGame()
     {
         Debug.Log("Load game");
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         isOnLoad = true;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }
