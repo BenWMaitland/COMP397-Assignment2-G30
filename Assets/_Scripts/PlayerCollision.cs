@@ -9,6 +9,10 @@ using UnityEngine.UI;
 
 public class PlayerCollision : MonoBehaviour
 {
+
+    public static PlayerCollision controller;
+    public GameObject pauseMenu;
+
     [Header("Health")]
     private GameObject heart1;
     private GameObject heart2;
@@ -57,8 +61,11 @@ public class PlayerCollision : MonoBehaviour
     {
         return health;
     }
+
     private void Start()
     {
+        controller = this;
+
         health = MAX_HEALTH;
         heart1 = GameObject.Find("Canvas/Hearts/HeartContainer1");
         heart2 = GameObject.Find("Canvas/Hearts/HeartContainer2");
@@ -76,6 +83,18 @@ public class PlayerCollision : MonoBehaviour
         chipSlot1 = GameObject.Find("ChipSlot1");
         chipSlot2 = GameObject.Find("ChipSlot2");
         chipSlot3 = GameObject.Find("ChipSlot3");
+
+        Debug.Log("onload from main clicked:" + MainMenu.isOnLoad);
+        if (MainMenu.isOnLoad)
+        {
+            LoadGameClicked();
+            MainMenu.isOnLoad = false;
+        }
+    }
+
+    public void LoadGameClicked()
+    {
+        LoadPlayer();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -211,6 +230,7 @@ public class PlayerCollision : MonoBehaviour
         //Cursor.lockState = CursorLockMode.None;
         //Cursor.visible = true;
         gameOverScreen.SetActive(true);
+        pauseMenu.SetActive(false);
     }
 
     public void Victory()
@@ -222,6 +242,7 @@ public class PlayerCollision : MonoBehaviour
         //Cursor.lockState = CursorLockMode.None;
         //Cursor.visible = true;
         victoryScreen.SetActive(true);
+        pauseMenu.SetActive(false);
     }
 
     public void UpdateHealth()
@@ -301,6 +322,8 @@ public class PlayerCollision : MonoBehaviour
             if (enemyData.enemyStates[i] == true)
             {
                 enemies.gameObject.transform.GetChild(i).gameObject.GetComponent<SlimeBehaviour>().SetDead();
+                enemies.gameObject.transform.GetChild(i).gameObject.GetComponent<SlimeBehaviour>().gameObject.transform.GetComponent<BoxCollider>().enabled = false;
+                enemies.gameObject.transform.GetChild(i).gameObject.GetComponent<SlimeBehaviour>().gameObject.transform.Find("Body").GetComponent<BoxCollider>().enabled = false;
             }
         }
 
