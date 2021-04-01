@@ -7,7 +7,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class PlayerCollision : MonoBehaviour
+public class PlayerCollision : MonoBehaviour, IPoolObject
 {
 
     public static PlayerCollision controller;
@@ -90,6 +90,11 @@ public class PlayerCollision : MonoBehaviour
             LoadPlayer();
             MainMenu.isOnLoad = false;
         }
+    }
+
+    public void Update()
+    {
+
     }
 
     public void LoadGameClicked()
@@ -342,5 +347,10 @@ public class PlayerCollision : MonoBehaviour
         }
 
         Debug.Log("Loaded");
+    }
+
+    public void OnObjectSpawn()
+    {
+        
     }
 }

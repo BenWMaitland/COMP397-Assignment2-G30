@@ -10,6 +10,14 @@ namespace Assets._Scripts
 {
     class ItemBehaviour : MonoBehaviour
     {
+        ObjectPooler objectPooler;
+        Transform slimeSpawn;
+        public void Start()
+        {
+            objectPooler = ObjectPooler.Instance;
+            slimeSpawn = GetComponent<ObjectPooler>().transform;
+        }
+
         public void useInventoryItem()
         {
             Transform itemSlot = transform;
@@ -18,18 +26,21 @@ namespace Assets._Scripts
             // using heart
             if (itemSlot.tag == "Heart")
             {
-                Debug.Log("Item is heart");
+                Debug.Log("Item is heart:" + GameObject.Find("Jammo_Player").GetComponent<PlayerCollision>().getHealth());
                 switch (GameObject.Find("Jammo_Player").GetComponent<PlayerCollision>().getHealth())
                 {
                     case 1:
                         // add health and use heart
                         GameObject.Find("Jammo_Player").GetComponent<PlayerCollision>().setHealth(2);
                         itemIcon.SetActive(false);
+                        //objectPooler.SpawnFromPool("Slime", slimeSpawn.position, Quaternion.identity);
+                        Debug.Log("spawn used");
                         break;
                     case 2:
                         // add health and use heart
                         GameObject.Find("Jammo_Player").GetComponent<PlayerCollision>().setHealth(3);
                         itemIcon.SetActive(false);
+                        //objectPooler.SpawnFromPool("Slime", slimeSpawn.position, Quaternion.identity);
                         break;
                     default:
                         break;

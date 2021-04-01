@@ -8,8 +8,11 @@ using UnityEngine.UI;
 
 public class ItemBehaviour : MonoBehaviour
 {
+    public ObjectPooler objectPooler;
+    Transform slimeSpawn;
     private void Start()
     {
+        objectPooler = ObjectPooler.Instance;
         this.gameObject.transform.GetChild(0).GetChild(0).transform.gameObject.SetActive(false);
     }
     public void useInventoryItem()
@@ -27,11 +30,15 @@ public class ItemBehaviour : MonoBehaviour
                     // add health and use heart
                     GameObject.Find("Jammo_Player").GetComponent<PlayerCollision>().setHealth(2);
                     itemIcon.SetActive(false);
+                    objectPooler.SpawnFromPool("Slime", objectPooler.gameObject.transform.position, Quaternion.identity);
+                    Debug.Log("spawn used");
                     break;
                 case 2:
                     // add health and use heart
                     GameObject.Find("Jammo_Player").GetComponent<PlayerCollision>().setHealth(3);
                     itemIcon.SetActive(false);
+                    objectPooler.SpawnFromPool("Slime", objectPooler.gameObject.transform.position, Quaternion.identity);
+                    Debug.Log("spawn used");
                     break;
                 default:
                     break;
