@@ -24,7 +24,6 @@ public class AchievementBehaviour : MonoBehaviour
         achievements.Add(killAllSlimes);
         Achievement collectAllItems = new Achievement("Collect all items", "Collect all items!", 1);
         achievements.Add(collectAllItems);
-
     }
 
     public void UpdateSlimeKills()

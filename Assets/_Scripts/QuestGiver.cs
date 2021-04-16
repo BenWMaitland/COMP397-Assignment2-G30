@@ -40,7 +40,7 @@ public class QuestGiver : MonoBehaviour
     public void StartQuest()
     {
         quest = questList[questIndex];
-        Invoke("OpenQuestWindow", 5);
+        Invoke("OpenQuestWindow", 3);
     }
 
     public void OpenQuestWindow()
@@ -63,7 +63,7 @@ public class QuestGiver : MonoBehaviour
         quest.Complete();
         questCompleteText.text = quest.completeMessage;
         questCompleteText.enabled = true;
-        Invoke("RemoveText", 3);
+        Invoke("RemoveText", 5);
         questIndex++;
         if (questIndex < questList.Count)
         {

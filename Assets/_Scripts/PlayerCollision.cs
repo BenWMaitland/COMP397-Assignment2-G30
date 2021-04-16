@@ -119,12 +119,12 @@ public class PlayerCollision : MonoBehaviour, IPoolObject
             achievementBehaviour.UpdateSlimeKills();
 
             // quest 
-            if (quest.isActive)
+            if (questGiver.quest.isActive)
             {
-                quest.goal.EnemyKilled();
-                if (quest.goal.IsReached())
+                questGiver.quest.goal.EnemyKilled();
+                if (questGiver.quest.goal.IsReached())
                 {
-                    Debug.Log("quest is compelted");
+                    Debug.Log("quest is completed");
                     questGiver.CompleteQuest();
                     
                     health++;
@@ -194,10 +194,10 @@ public class PlayerCollision : MonoBehaviour, IPoolObject
             achievementBehaviour.UpdateItemCollected("chip");
 
             // quest 
-            if (quest.isActive)
+            if (questGiver.quest.isActive)
             {
-                quest.goal.ItemCollected();
-                if (quest.goal.IsReached())
+                questGiver.quest.goal.ChipCollected();
+                if (questGiver.quest.goal.IsReached())
                 {
                     Debug.Log("quest is completed");
                     questGiver.CompleteQuest();
@@ -228,10 +228,10 @@ public class PlayerCollision : MonoBehaviour, IPoolObject
             achievementBehaviour.UpdateItemCollected("battery");
 
             // quest 
-            if (quest.isActive)
+            if (questGiver.quest.isActive)
             {
-                quest.goal.ItemCollected();
-                if (quest.goal.IsReached())
+                questGiver.quest.goal.BatteryCollected();
+                if (questGiver.quest.goal.IsReached())
                 {
                     Debug.Log("quest is completed");
                     questGiver.CompleteQuest();
@@ -264,10 +264,10 @@ public class PlayerCollision : MonoBehaviour, IPoolObject
             achievementBehaviour.UpdateItemCollected("heart");
 
             // quest 
-            if (quest.isActive)
+            if (questGiver.quest.isActive)
             {
-                quest.goal.ItemCollected();
-                if (quest.goal.IsReached())
+                questGiver.quest.goal.HeartCollected();
+                if (questGiver.quest.goal.IsReached())
                 {
                     Debug.Log("quest is completed");
                     questGiver.CompleteQuest();
@@ -281,10 +281,10 @@ public class PlayerCollision : MonoBehaviour, IPoolObject
             if (GameObject.Find("BatteryImage").GetComponent<Image>().IsActive() && GameObject.Find("ChipImage").GetComponent<Image>().IsActive())
             {
                 // quest 
-                if (quest.isActive)
+                if (questGiver.quest.isActive)
                 {
-                    quest.goal.ItemCollected();
-                    if (quest.goal.IsReached())
+                        questGiver.quest.goal.LevelCompleted();
+                    if (questGiver.quest.goal.IsReached())
                     {
                         Debug.Log("quest is completed");
                         questGiver.CompleteQuest();

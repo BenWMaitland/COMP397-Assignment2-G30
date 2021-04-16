@@ -25,16 +25,24 @@ public class QuestGoal
         }
     }
 
-    public void ItemCollected()
+    public void HeartCollected()
     {
         if (goalType == GoalType.Heart)
         {
             currentAmount++;
         }
+    }
+
+    public void ChipCollected()
+    {
         if (goalType == GoalType.Chip)
         {
             currentAmount++;
         }
+    }
+
+    public void BatteryCollected()
+    {
         if (goalType == GoalType.Battery)
         {
             currentAmount++;
