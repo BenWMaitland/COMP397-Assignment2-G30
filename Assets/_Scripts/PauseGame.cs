@@ -7,6 +7,7 @@ public class PauseGame : MonoBehaviour
 {
     public static bool GameIsPaused = false;
     public GameObject pauseMenu;
+    public QuestGiver questGiver;
 
     // Start is called before the first frame update
     void Update()
@@ -46,6 +47,8 @@ public class PauseGame : MonoBehaviour
     {
         Time.timeScale = 1.0f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        questGiver.quest = questGiver.questList[QuestGiver.questIndex];
+        questGiver.OpenQuestWindow();
     }
 
     public void TogglePaused()

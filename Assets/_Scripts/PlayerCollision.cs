@@ -124,7 +124,6 @@ public class PlayerCollision : MonoBehaviour, IPoolObject
                 {
                     Debug.Log("quest is compelted");
                     questGiver.CompleteQuest();
-                    quest.goal.currentAmount = 0;
                     
                     health++;
                     UpdateHealth();
@@ -188,6 +187,17 @@ public class PlayerCollision : MonoBehaviour, IPoolObject
                 else
                     chipSlot3.gameObject.transform.GetChild(0).GetChild(0).transform.gameObject.SetActive(true);
             }
+
+            // quest 
+            if (quest.isActive)
+            {
+                quest.goal.ItemCollected();
+                if (quest.goal.IsReached())
+                {
+                    Debug.Log("quest is completed");
+                    questGiver.CompleteQuest();
+                }
+            }
         }
         if (other.gameObject.CompareTag("Battery"))
         {
@@ -207,6 +217,17 @@ public class PlayerCollision : MonoBehaviour, IPoolObject
                     batterySlot2.gameObject.transform.GetChild(0).GetChild(0).transform.gameObject.SetActive(true);
                 else
                     batterySlot3.gameObject.transform.GetChild(0).GetChild(0).transform.gameObject.SetActive(true);
+            }
+
+            // quest 
+            if (quest.isActive)
+            {
+                quest.goal.ItemCollected();
+                if (quest.goal.IsReached())
+                {
+                    Debug.Log("quest is completed");
+                    questGiver.CompleteQuest();
+                }
             }
         }
         if (other.gameObject.CompareTag("Heart"))
@@ -230,12 +251,34 @@ public class PlayerCollision : MonoBehaviour, IPoolObject
                 else
                     heartSlot3.gameObject.transform.GetChild(0).GetChild(0).transform.gameObject.SetActive(true);
             }
+
+            // quest 
+            if (quest.isActive)
+            {
+                quest.goal.ItemCollected();
+                if (quest.goal.IsReached())
+                {
+                    Debug.Log("quest is completed");
+                    questGiver.CompleteQuest();
+                }
+            }
         }
+
         if (other.gameObject.CompareTag("Satellite"))
         {
             Debug.Log("Collided with satellie");
             if (GameObject.Find("BatteryImage").GetComponent<Image>().IsActive() && GameObject.Find("ChipImage").GetComponent<Image>().IsActive())
             {
+                // quest 
+                if (quest.isActive)
+                {
+                    quest.goal.ItemCollected();
+                    if (quest.goal.IsReached())
+                    {
+                        Debug.Log("quest is completed");
+                        questGiver.CompleteQuest();
+                    }
+                }
                 Victory();
             }
         }

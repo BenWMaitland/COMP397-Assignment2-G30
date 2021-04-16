@@ -21,4 +21,13 @@ public class Quest
         isActive = false;
         Debug.Log("title of quest:" + title + " is completed");
     }
+
+    public Quest() { }
+
+    public Quest(string title, string description, GoalType goalType, int requiredAmount)
+    {
+        this.title = title;
+        this.description = description;
+        goal = new QuestGoal(goalType, requiredAmount);
+    }
 }

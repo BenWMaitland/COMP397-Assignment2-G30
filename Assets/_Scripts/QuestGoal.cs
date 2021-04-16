@@ -10,6 +10,13 @@ public class QuestGoal
     public int requiredAmount;
     public int currentAmount;
 
+    public QuestGoal(GoalType goalType, int requiredAmount)
+    {
+        this.goalType = goalType;
+        this.requiredAmount = requiredAmount;
+        this.currentAmount = 0;
+    }
+
     public void EnemyKilled()
     {
         if (goalType == GoalType.Kill)
@@ -20,7 +27,23 @@ public class QuestGoal
 
     public void ItemCollected()
     {
-        if (goalType == GoalType.Gathering)
+        if (goalType == GoalType.Heart)
+        {
+            currentAmount++;
+        }
+        if (goalType == GoalType.Chip)
+        {
+            currentAmount++;
+        }
+        if (goalType == GoalType.Battery)
+        {
+            currentAmount++;
+        }
+    }
+
+    public void LevelCompleted()
+    {
+        if (goalType == GoalType.Win)
         {
             currentAmount++;
         }
@@ -35,5 +58,8 @@ public class QuestGoal
 public enum GoalType
 {
     Kill,
-    Gathering
+    Heart,
+    Chip,
+    Battery,
+    Win
 }
