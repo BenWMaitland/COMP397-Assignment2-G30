@@ -53,6 +53,8 @@ public class PlayerCollision : MonoBehaviour, IPoolObject
     private GameObject chipSlot2;
     private GameObject chipSlot3;
 
+    public Quest quest;
+
     public void setHealth(int newHealth)
     {
         health = newHealth;
@@ -112,6 +114,20 @@ public class PlayerCollision : MonoBehaviour, IPoolObject
             other.gameObject.transform.parent.GetComponent<SlimeBehaviour>().SetDead();
             other.gameObject.transform.parent.GetComponent<BoxCollider>().enabled = false;
             other.gameObject.transform.parent.Find("Body").GetComponent<BoxCollider>().enabled = false;
+
+            // quest 
+            if (quest.isActive)
+            {
+                quest.goal.EnemyKilled();
+                if (quest.goal.IsReached())
+                {
+                    Debug.Log("quest is compelted");
+                    quest.Complete();
+                    
+                    health++;
+                    UpdateHealth();
+                }
+            }
         }
         if (other.gameObject.CompareTag("Enemy"))
         {
