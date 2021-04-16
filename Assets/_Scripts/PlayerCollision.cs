@@ -54,6 +54,7 @@ public class PlayerCollision : MonoBehaviour, IPoolObject
     private GameObject chipSlot3;
 
     public Quest quest;
+    public QuestGiver questGiver;
 
     public void setHealth(int newHealth)
     {
@@ -122,7 +123,8 @@ public class PlayerCollision : MonoBehaviour, IPoolObject
                 if (quest.goal.IsReached())
                 {
                     Debug.Log("quest is compelted");
-                    quest.Complete();
+                    questGiver.CompleteQuest();
+                    quest.goal.currentAmount = 0;
                     
                     health++;
                     UpdateHealth();

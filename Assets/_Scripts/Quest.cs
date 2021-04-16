@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 [System.Serializable]
 public class Quest
@@ -19,6 +20,5 @@ public class Quest
         completeMessage = "Quest completed: " + title;
         isActive = false;
         Debug.Log("title of quest:" + title + " is completed");
-
     }
 }

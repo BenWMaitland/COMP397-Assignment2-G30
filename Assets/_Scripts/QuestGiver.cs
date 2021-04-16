@@ -31,4 +31,17 @@ public class QuestGiver : MonoBehaviour
 
         player.quest = quest;
     }
+
+    public void CompleteQuest()
+    {
+        quest.Complete();
+        questCompleteText.text = quest.completeMessage;
+        questCompleteText.enabled = true;
+        Invoke("RemoveText", 5);
+    }
+
+    private void RemoveText()
+    {
+        questCompleteText.enabled = false;
+    }
 }
