@@ -1387,7 +1387,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.0035154943, g: 0.745283, b: 0.026001588, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -7420,6 +7420,7 @@ MonoBehaviour:
     description: 
     heartReward: 0
     completeMessage: 
+    questImage: {fileID: 0}
     goal:
       goalType: 0
       requiredAmount: 0
@@ -8880,6 +8881,7 @@ MonoBehaviour:
     description: 'Reward: Heart'
     heartReward: 1
     completeMessage: 
+    questImage: {fileID: 0}
     goal:
       goalType: 0
       requiredAmount: 1
@@ -8892,6 +8894,11 @@ MonoBehaviour:
   achievementText: {fileID: 1074559300}
   questCompleteText: {fileID: 200865697}
   questImage: {fileID: 73461096}
+  slimeImage: {fileID: 2800000, guid: b9f2c890db6586947850990e82ba0788, type: 3}
+  heartImage: {fileID: 2800000, guid: c7f2433fba0856a4ca9eda2829bcfb3d, type: 3}
+  chipImage: {fileID: 2800000, guid: ceb7bc995fe3ed2408aa500a832e9f42, type: 3}
+  batteryImage: {fileID: 2800000, guid: 6a4cf354b3e0bbe4b918f707dbf10631, type: 3}
+  satelliteImage: {fileID: 0}
 --- !u!114 &946468424
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10229,7 +10236,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.6981132, g: 0.6966119, b: 0.023050921, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

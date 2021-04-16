@@ -12,6 +12,7 @@ public class Quest
     public string description;
     public int heartReward;
     public string completeMessage;
+    public Texture questImage;
 
     public QuestGoal goal;
 
@@ -24,10 +25,11 @@ public class Quest
 
     public Quest() { }
 
-    public Quest(string title, string description, GoalType goalType, int requiredAmount)
+    public Quest(string title, string description, GoalType goalType, int requiredAmount, Texture questImage)
     {
         this.title = title;
         this.description = description;
         goal = new QuestGoal(goalType, requiredAmount);
+        this.questImage = questImage;
     }
 }

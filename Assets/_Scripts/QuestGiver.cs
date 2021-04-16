@@ -17,21 +17,27 @@ public class QuestGiver : MonoBehaviour
     public Text questCompleteText;
     public RawImage questImage;
 
+    public Texture slimeImage;
+    public Texture heartImage;
+    public Texture chipImage;
+    public Texture batteryImage;
+    public Texture satelliteImage;
+
     public static int questIndex = 0;
 
     public void Start()
     {
         questWindow.SetActive(false);
         questList = new List<Quest>();
-        Quest newQuest = new Quest("Defeat 1 slime", "Reward: Heart", GoalType.Kill, 1);
+        Quest newQuest = new Quest("Defeat 1 slime", "Reward: Heart", GoalType.Kill, 1, slimeImage);
         questList.Add(newQuest);
-        newQuest = new Quest("Collect 1 heart", "", GoalType.Heart, 1);
+        newQuest = new Quest("Collect 1 heart", "", GoalType.Heart, 1, heartImage);
         questList.Add(newQuest);
-        newQuest = new Quest("Collect 1 microchip", "", GoalType.Chip, 1);
+        newQuest = new Quest("Collect 1 microchip", "", GoalType.Chip, 1, chipImage);
         questList.Add(newQuest);
-        newQuest = new Quest("Collect 1 battery", "", GoalType.Battery, 1);
+        newQuest = new Quest("Collect 1 battery", "", GoalType.Battery, 1, batteryImage);
         questList.Add(newQuest);
-        newQuest = new Quest("Reach the satellite", "", GoalType.Win, 1);
+        newQuest = new Quest("Reach the satellite", "", GoalType.Win, 1, satelliteImage);
         questList.Add(newQuest);
         quest = questList[questIndex];
         OpenQuestWindow();
@@ -48,6 +54,7 @@ public class QuestGiver : MonoBehaviour
         questWindow.SetActive(true);
         titleText.text = quest.title;
         descriptionText.text = quest.description;
+        questImage.texture = quest.questImage;
     }
 
     public void AcceptQuest()
