@@ -910,7 +910,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: fdf643b7e57fb9f498ade64169c21613, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.06
+      value: -15.61
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: fdf643b7e57fb9f498ade64169c21613, type: 3}
       propertyPath: m_LocalPosition.y
@@ -918,7 +918,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: fdf643b7e57fb9f498ade64169c21613, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.07
+      value: 24.87
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: fdf643b7e57fb9f498ade64169c21613, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1363,8 +1363,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -181, y: 476}
-  m_SizeDelta: {x: 600, y: 92.3625}
+  m_AnchoredPosition: {x: 86.08812, y: 429.8595}
+  m_SizeDelta: {x: 936.2408, y: 45.503}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &200865696
 CanvasRenderer:
@@ -1407,7 +1407,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Placeholder
+  m_Text: 
 --- !u!4 &204157569 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4023215848608658, guid: 55776efecb0cd134ea5f418c2f97a705, type: 3}
@@ -4518,7 +4518,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 564, y: 225}
+  m_AnchoredPosition: {x: 564, y: 118}
   m_SizeDelta: {x: -2820, y: -1190}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &490110458
@@ -7424,6 +7424,7 @@ MonoBehaviour:
       goalType: 0
       requiredAmount: 0
       currentAmount: 0
+  questGiver: {fileID: 946468423}
 --- !u!114 &794044541
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8881,6 +8882,7 @@ MonoBehaviour:
       goalType: 0
       requiredAmount: 1
       currentAmount: 0
+  questList: []
   player: {fileID: 794044536}
   questWindow: {fileID: 490110456}
   titleText: {fileID: 2017985993}
@@ -10187,8 +10189,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -181, y: 575}
-  m_SizeDelta: {x: 600, y: 92.3625}
+  m_AnchoredPosition: {x: 86.088135, y: 482}
+  m_SizeDelta: {x: 936.2408, y: 92.3625}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1074559299
 CanvasRenderer:
@@ -10231,7 +10233,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Placeholder
+  m_Text: 
 --- !u!1 &1082025401
 GameObject:
   m_ObjectHideFlags: 0
@@ -13695,7 +13697,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2072614652576376795, guid: aa37494760abb3346a18045be0740d47, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -16.13
+      value: -27.81
       objectReference: {fileID: 0}
     - target: {fileID: 2072614652576376795, guid: aa37494760abb3346a18045be0740d47, type: 3}
       propertyPath: m_LocalPosition.y
@@ -13703,11 +13705,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2072614652576376795, guid: aa37494760abb3346a18045be0740d47, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 23.61
+      value: 18.84
       objectReference: {fileID: 0}
     - target: {fileID: 2072614652576376795, guid: aa37494760abb3346a18045be0740d47, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 2072614652576376795, guid: aa37494760abb3346a18045be0740d47, type: 3}
       propertyPath: m_LocalRotation.x
@@ -13715,7 +13717,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2072614652576376795, guid: aa37494760abb3346a18045be0740d47, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 1
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 2072614652576376795, guid: aa37494760abb3346a18045be0740d47, type: 3}
       propertyPath: m_LocalRotation.z
@@ -13727,7 +13729,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2072614652576376795, guid: aa37494760abb3346a18045be0740d47, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 2072614652576376795, guid: aa37494760abb3346a18045be0740d47, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -14069,7 +14071,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Reward: 1 Heart'
+  m_Text: 
 --- !u!222 &1414585222
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -15222,6 +15224,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 860292598}
+  questGiver: {fileID: 0}
 --- !u!114 &1516326045
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19190,7 +19193,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4645620463839923539, guid: 39bc5e3f041c7d8449e37a6e56ed1f1a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.4
+      value: -33.09
       objectReference: {fileID: 0}
     - target: {fileID: 4645620463839923539, guid: 39bc5e3f041c7d8449e37a6e56ed1f1a, type: 3}
       propertyPath: m_LocalPosition.y
@@ -19198,7 +19201,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4645620463839923539, guid: 39bc5e3f041c7d8449e37a6e56ed1f1a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2
+      value: 3.52
       objectReference: {fileID: 0}
     - target: {fileID: 4645620463839923539, guid: 39bc5e3f041c7d8449e37a6e56ed1f1a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -20047,7 +20050,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Defeat 1 Slime
+  m_Text: 
 --- !u!222 &2017985994
 CanvasRenderer:
   m_ObjectHideFlags: 0
