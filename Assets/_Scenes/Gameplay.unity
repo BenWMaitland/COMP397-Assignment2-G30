@@ -7425,6 +7425,7 @@ MonoBehaviour:
       requiredAmount: 0
       currentAmount: 0
   questGiver: {fileID: 946468423}
+  achievementBehaviour: {fileID: 946468424}
 --- !u!114 &794044541
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8839,6 +8840,7 @@ GameObject:
   m_Component:
   - component: {fileID: 946468422}
   - component: {fileID: 946468423}
+  - component: {fileID: 946468424}
   m_Layer: 0
   m_Name: QuestGiver
   m_TagString: Untagged
@@ -8890,6 +8892,20 @@ MonoBehaviour:
   achievementText: {fileID: 1074559300}
   questCompleteText: {fileID: 200865697}
   questImage: {fileID: 73461096}
+--- !u!114 &946468424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 946468421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a540881af18e75e4fa045c1ed623e155, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  completionText: {fileID: 1074559300}
+  achievements: []
 --- !u!224 &980493723 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7925292308932292680, guid: e8beeea24a3d5344bad83196ac4a6a43, type: 3}

@@ -55,6 +55,7 @@ public class PlayerCollision : MonoBehaviour, IPoolObject
 
     public Quest quest;
     public QuestGiver questGiver;
+    public AchievementBehaviour achievementBehaviour;
 
     public void setHealth(int newHealth)
     {
@@ -115,6 +116,7 @@ public class PlayerCollision : MonoBehaviour, IPoolObject
             other.gameObject.transform.parent.GetComponent<SlimeBehaviour>().SetDead();
             other.gameObject.transform.parent.GetComponent<BoxCollider>().enabled = false;
             other.gameObject.transform.parent.Find("Body").GetComponent<BoxCollider>().enabled = false;
+            achievementBehaviour.UpdateSlimeKills();
 
             // quest 
             if (quest.isActive)
@@ -188,6 +190,9 @@ public class PlayerCollision : MonoBehaviour, IPoolObject
                     chipSlot3.gameObject.transform.GetChild(0).GetChild(0).transform.gameObject.SetActive(true);
             }
 
+            // achievement
+            achievementBehaviour.UpdateItemCollected("chip");
+
             // quest 
             if (quest.isActive)
             {
@@ -218,6 +223,9 @@ public class PlayerCollision : MonoBehaviour, IPoolObject
                 else
                     batterySlot3.gameObject.transform.GetChild(0).GetChild(0).transform.gameObject.SetActive(true);
             }
+
+            // achievement
+            achievementBehaviour.UpdateItemCollected("battery");
 
             // quest 
             if (quest.isActive)
@@ -251,6 +259,9 @@ public class PlayerCollision : MonoBehaviour, IPoolObject
                 else
                     heartSlot3.gameObject.transform.GetChild(0).GetChild(0).transform.gameObject.SetActive(true);
             }
+
+            // achievement
+            achievementBehaviour.UpdateItemCollected("heart");
 
             // quest 
             if (quest.isActive)
