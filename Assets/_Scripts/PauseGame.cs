@@ -47,8 +47,6 @@ public class PauseGame : MonoBehaviour
     {
         Time.timeScale = 1.0f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        questGiver.quest = questGiver.questList[QuestGiver.questIndex];
-        questGiver.OpenQuestWindow();
     }
 
     public void TogglePaused()
