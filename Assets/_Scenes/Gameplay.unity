@@ -9680,7 +9680,7 @@ MonoBehaviour:
   heartImage: {fileID: 2800000, guid: c7f2433fba0856a4ca9eda2829bcfb3d, type: 3}
   chipImage: {fileID: 2800000, guid: ceb7bc995fe3ed2408aa500a832e9f42, type: 3}
   batteryImage: {fileID: 2800000, guid: 6a4cf354b3e0bbe4b918f707dbf10631, type: 3}
-  satelliteImage: {fileID: 0}
+  satelliteImage: {fileID: 2800000, guid: 817b586ca5fb1c5429438180d34ce356, type: 3}
 --- !u!114 &946468424
 MonoBehaviour:
   m_ObjectHideFlags: 0
