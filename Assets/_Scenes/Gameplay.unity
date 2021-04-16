@@ -15240,7 +15240,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 860292598}
-  questGiver: {fileID: 0}
+  questGiver: {fileID: 946468423}
 --- !u!114 &1516326045
 MonoBehaviour:
   m_ObjectHideFlags: 0

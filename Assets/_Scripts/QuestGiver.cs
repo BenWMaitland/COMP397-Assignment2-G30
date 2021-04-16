@@ -63,7 +63,7 @@ public class QuestGiver : MonoBehaviour
         quest.Complete();
         questCompleteText.text = quest.completeMessage;
         questCompleteText.enabled = true;
-        Invoke("RemoveText", 5);
+        Invoke("RemoveText", 3);
         questIndex++;
         if (questIndex < questList.Count)
         {
@@ -74,5 +74,13 @@ public class QuestGiver : MonoBehaviour
     private void RemoveText()
     {
         questCompleteText.enabled = false;
+    }
+
+    public void SetQuestsInactive()
+    {
+        foreach (Quest quest in questList)
+        {
+            quest.isActive = false;
+        }
     }
 }

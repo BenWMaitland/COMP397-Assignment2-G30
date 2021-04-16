@@ -46,6 +46,9 @@ public class PauseGame : MonoBehaviour
     public void Restart()
     {
         Time.timeScale = 1.0f;
+        questGiver.SetQuestsInactive();
+        questGiver.quest = questGiver.questList[0];
+        questGiver.OpenQuestWindow();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
